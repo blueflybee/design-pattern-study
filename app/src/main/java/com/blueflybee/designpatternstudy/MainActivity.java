@@ -1,11 +1,14 @@
 package com.blueflybee.designpatternstudy;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import com.blueflybee.designpatternstudy.chainofresponsibility.ChainOfResponsibilityActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,10 +28,10 @@ public class MainActivity extends AppCompatActivity {
       @Override
       public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
         switch (position) {
-//          case 0:
-//            Intent intent0 = new Intent(MainActivity.this, VideoDownloadProgressBarActivity.class);
-//            startActivity(intent0);
-//            break;
+          case 0:
+            Intent intent0 = new Intent(MainActivity.this, ChainOfResponsibilityActivity.class);
+            startActivity(intent0);
+            break;
 
 //          case 1:
 //            Intent intent1 = new Intent(MainActivity.this, TimeRulerActivity.class);

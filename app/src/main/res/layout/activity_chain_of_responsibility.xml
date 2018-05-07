@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"/>
+
+        <Button
+            android:id="@+id/btn_button_help"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="show help of button"/>
+
+        <Button
+            android:id="@+id/btn_dialog_help"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="show help of dialog"/>
+
+        <Button
+            android:id="@+id/btn_window_help"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="show help of window"/>
+
+        <Button
+            android:id="@+id/btn_application_help"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="show help of application"/>
+
+    </LinearLayout>
+</layout>
