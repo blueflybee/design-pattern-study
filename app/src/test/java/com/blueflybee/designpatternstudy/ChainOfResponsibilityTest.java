@@ -20,7 +20,7 @@ import static org.mockito.Mockito.*;
  *     author : shaojun
  *     e-mail : wusj@qtec.cn
  *     time   : 2018/05/04
- *     desc   :
+ *     desc   : Test chain of responsibility design pattern
  *     version: 1.0
  * </pre>
  */
