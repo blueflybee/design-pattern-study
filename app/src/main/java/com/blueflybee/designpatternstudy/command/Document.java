@@ -10,15 +10,21 @@ package com.blueflybee.designpatternstudy.command;
  * </pre>
  */
 public class Document {
+
+  public Document() {
+  }
+
   public Document(String name) {
 
   }
 
   public void open() {
+    System.out.println("Document.open");
 
   }
 
   public void paste() {
+    System.out.println("Document.paste");
 
   }
 }

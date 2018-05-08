@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.blueflybee.designpatternstudy.chainofresponsibility.ChainOfResponsibilityActivity;
+import com.blueflybee.designpatternstudy.command.CommandActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     String[] titles = {
         "1、职责链模式（Chain of responsibility）",
-//        "时间轴刻度尺",
+        "2、命令模式（Command）",
 //        "仿支付宝首页自定义菜单",
     };
     ListView listView = findViewById(R.id.list);
@@ -33,10 +34,10 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent0);
             break;
 
-//          case 1:
-//            Intent intent1 = new Intent(MainActivity.this, TimeRulerActivity.class);
-//            startActivity(intent1);
-//            break;
+          case 1:
+            Intent intent1 = new Intent(MainActivity.this, CommandActivity.class);
+            startActivity(intent1);
+            break;
 //
 //          case 2:
 //            Intent intent2 = new Intent(MainActivity.this, AlipayActivity.class);
