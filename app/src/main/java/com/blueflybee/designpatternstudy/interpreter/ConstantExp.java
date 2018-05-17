@@ -22,9 +22,12 @@ public class ConstantExp implements BooleanExp {
   }
 
   @Override
-  public BooleanExp evaluate(BooleanContext context) {
+  public boolean evaluate(BooleanContext context) {
+    return mConstant;
+  }
 
-    return null;
+  public boolean value() {
+    return mConstant;
   }
 
   @Override

@@ -9,6 +9,9 @@ import com.blueflybee.designpatternstudy.interpreter.OrExp;
 import com.blueflybee.designpatternstudy.interpreter.VariableExp;
 
 import org.junit.Test;
+import org.mockito.internal.matchers.And;
+import org.mockito.internal.matchers.Or;
+
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
@@ -69,7 +72,74 @@ public class InterpreterTest {
     BooleanContext context = new BooleanContext();
     ConstantExp cTrue = new ConstantExp(true);
     context.assign(x, cTrue);
-    BooleanExp result = x.evaluate(context);
-    assertEquals(cTrue, result);
+    boolean result = x.evaluate(context);
+    assertEquals(true, result);
+  }
+
+  @Test
+  public void evaluateConstantExp_Correct() {
+    ConstantExp constantExp = new ConstantExp(true);
+    BooleanContext context = new BooleanContext();
+    boolean result = constantExp.evaluate(context);
+
+    assertEquals(true, result);
+  }
+
+  @Test
+  public void evaluateAndExp_Correct() {
+    VariableExp exp1 = new VariableExp("x");
+    BooleanContext context = new BooleanContext();
+    context.assign(exp1, new ConstantExp(true));
+
+    ConstantExp exp2 = new ConstantExp(false);
+
+    AndExp andExp = new AndExp(exp1, exp2);
+    boolean result = andExp.evaluate(context);
+
+    assertEquals(false, result);
+  }
+
+  @Test
+  public void evaluateOrExp_Correct() {
+    VariableExp exp1 = new VariableExp("x");
+    BooleanContext context = new BooleanContext();
+    context.assign(exp1, new ConstantExp(true));
+
+    ConstantExp exp2 = new ConstantExp(false);
+
+    OrExp orExp = new OrExp(exp1, exp2);
+    boolean result = orExp.evaluate(context);
+
+    assertEquals(true, result);
+  }
+
+  @Test
+  public void evaluateNotExp_Correct() {
+    VariableExp exp1 = new VariableExp("x");
+    BooleanContext context = new BooleanContext();
+    context.assign(exp1, new ConstantExp(false));
+
+    NotExp notExp = new NotExp(exp1);
+    boolean result = notExp.evaluate(context);
+
+    assertEquals(true, result);
+  }
+
+  @Test
+  public void evaluateCompositeExp_Correct() {
+    VariableExp x = new VariableExp("x");
+    VariableExp y = new VariableExp("y");
+    AndExp exp1 = new AndExp(new ConstantExp(true), x);
+    AndExp exp2 = new AndExp(y, new NotExp(x));
+
+    OrExp orExp = new OrExp(exp1, exp2);
+    BooleanContext context = new BooleanContext();
+
+    context.assign(x, new ConstantExp(false));
+    context.assign(y, new ConstantExp(true));
+
+    boolean result = orExp.evaluate(context);
+//    System.out.println("result = " + result);
+    assertEquals(true, result);
   }
 }

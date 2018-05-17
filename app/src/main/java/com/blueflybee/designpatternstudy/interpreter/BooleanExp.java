@@ -12,5 +12,5 @@ package com.blueflybee.designpatternstudy.interpreter;
 public interface BooleanExp {
   BooleanExp copy();
 
-  BooleanExp evaluate(BooleanContext context);
+  boolean evaluate(BooleanContext context);
 }

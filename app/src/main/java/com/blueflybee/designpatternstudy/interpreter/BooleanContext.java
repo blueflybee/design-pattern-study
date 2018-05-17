@@ -21,7 +21,12 @@ public class BooleanContext {
     mVariableExpMap.put(variableExp.getName(), constant);
   }
 
-  public ConstantExp lookup(String name) {
-    return mVariableExpMap.get(name);
+  public boolean lookup(String name)  {
+    ConstantExp constantExp = mVariableExpMap.get(name);
+    if (constantExp == null) {
+      System.out.println("should assign value to the boolean variable " + name);
+      return false;
+    }
+    return constantExp.value();
   }
 }

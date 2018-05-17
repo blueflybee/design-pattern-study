@@ -23,8 +23,7 @@ public class VariableExp implements BooleanExp {
   }
 
   @Override
-  public BooleanExp evaluate(BooleanContext context) {
-
+  public boolean evaluate(BooleanContext context) {
     return context.lookup(mName);
   }
 

@@ -22,9 +22,9 @@ public class NotExp implements BooleanExp {
   }
 
   @Override
-  public BooleanExp evaluate(BooleanContext context) {
+  public boolean evaluate(BooleanContext context) {
 
-    return null;
+    return !mExp.evaluate(context);
   }
 
   @Override

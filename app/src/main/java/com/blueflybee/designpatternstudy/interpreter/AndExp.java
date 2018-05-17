@@ -24,9 +24,8 @@ public class AndExp implements BooleanExp {
   }
 
   @Override
-  public BooleanExp evaluate(BooleanContext context) {
-
-    return null;
+  public boolean evaluate(BooleanContext context) {
+    return mExp1.evaluate(context) && mExp2.evaluate(context);
   }
 
   @Override
