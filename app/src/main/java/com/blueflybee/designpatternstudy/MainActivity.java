@@ -10,6 +10,7 @@ import android.widget.ListView;
 
 import com.blueflybee.designpatternstudy.chainofresponsibility.ChainOfResponsibilityActivity;
 import com.blueflybee.designpatternstudy.command.CommandActivity;
+import com.blueflybee.designpatternstudy.interpreter.InterpreterActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     String[] titles = {
         "1、职责链模式（Chain of responsibility）",
         "2、命令模式（Command）",
-//        "仿支付宝首页自定义菜单",
+        "3、解释器模式（Interpreter）",
     };
     ListView listView = findViewById(R.id.list);
     listView.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, titles));
@@ -39,10 +40,10 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent1);
             break;
 //
-//          case 2:
-//            Intent intent2 = new Intent(MainActivity.this, AlipayActivity.class);
-//            startActivity(intent2);
-//            break;
+          case 2:
+            Intent intent2 = new Intent(MainActivity.this, InterpreterActivity.class);
+            startActivity(intent2);
+            break;
 
           default:
             break;
