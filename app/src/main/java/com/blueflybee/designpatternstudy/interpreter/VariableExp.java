@@ -52,8 +52,6 @@ public class VariableExp implements BooleanExp {
 
   @Override
   public String toString() {
-    return "VariableExp{" +
-        "mName='" + mName + '\'' +
-        '}';
+    return mName;
   }
 }

@@ -124,7 +124,8 @@ public class InterpreterTest {
 
     assertEquals(true, result);
   }
-
+//  orExp = OrExp{mExp1=AndExp{mExp1=ConstantExp{mConstant=true}, mExp2=VariableExp{mName='x'}}, mExp2=AndExp{mExp1=VariableExp{mName='y'}, mExp2=NotExp{mExp=VariableExp{mName='x'}}}}
+//
   @Test
   public void evaluateCompositeExp_Correct() {
     VariableExp x = new VariableExp("x");
@@ -138,6 +139,7 @@ public class InterpreterTest {
     context.assign(x, new ConstantExp(false));
     context.assign(y, new ConstantExp(true));
 
+    System.out.println("orExp = " + orExp);
     boolean result = orExp.evaluate(context);
 //    System.out.println("result = " + result);
     assertEquals(true, result);

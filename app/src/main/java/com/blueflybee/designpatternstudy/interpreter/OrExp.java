@@ -49,9 +49,6 @@ public class OrExp implements BooleanExp {
 
   @Override
   public String toString() {
-    return "OrExp{" +
-        "mExp1=" + mExp1 +
-        ", mExp2=" + mExp2 +
-        '}';
+    return "(" + mExp1 + " || " + mExp2 + ")";
   }
 }

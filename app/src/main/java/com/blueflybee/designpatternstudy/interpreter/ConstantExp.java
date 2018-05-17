@@ -47,8 +47,6 @@ public class ConstantExp implements BooleanExp {
 
   @Override
   public String toString() {
-    return "ConstantExp{" +
-        "mConstant=" + mConstant +
-        '}';
+    return Boolean.toString(mConstant);
   }
 }

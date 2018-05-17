@@ -44,8 +44,6 @@ public class NotExp implements BooleanExp {
 
   @Override
   public String toString() {
-    return "NotExp{" +
-        "mExp=" + mExp +
-        '}';
+    return "(!" + mExp + ")";
   }
 }
