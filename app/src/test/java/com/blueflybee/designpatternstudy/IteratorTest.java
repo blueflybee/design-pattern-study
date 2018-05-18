@@ -123,10 +123,6 @@ public class IteratorTest {
 
     assertFalse(iterator.hasNext());
 
-    for (iterator.first();iterator.hasNext(); iterator.next()) {
-      System.out.println("iterator = " + iterator);
-    }
-
   }
 
   @Test
