@@ -32,4 +32,5 @@ public abstract class AbstractList<E> {
     }
     return null;
   }
+
 }

@@ -2,10 +2,14 @@ package com.blueflybee.designpatternstudy;
 
 import com.blueflybee.designpatternstudy.iterator.AbstractList;
 import com.blueflybee.designpatternstudy.iterator.Employee;
+import com.blueflybee.designpatternstudy.iterator.FilterIterator;
+import com.blueflybee.designpatternstudy.iterator.InnerIterator;
+import com.blueflybee.designpatternstudy.iterator.IterFilter;
 import com.blueflybee.designpatternstudy.iterator.Iterator;
 import com.blueflybee.designpatternstudy.iterator.List;
 import com.blueflybee.designpatternstudy.iterator.ListIterator;
 import com.blueflybee.designpatternstudy.iterator.ListTraver;
+import com.blueflybee.designpatternstudy.iterator.PrintNEmpIterator;
 import com.blueflybee.designpatternstudy.iterator.SkipList;
 import com.blueflybee.designpatternstudy.iterator.SkipListIterator;
 import com.blueflybee.designpatternstudy.iterator.SkipListTraver;
@@ -218,5 +222,61 @@ public class IteratorTest {
       System.out.println("currentItem = " + employee);
     }
 
+  }
+
+  @Test
+  public void innerIterator_printNEmployee() {
+    AbstractList<Employee> list = new List<>();
+    list.add(new Employee("0", "e0"));
+    list.add(new Employee("1", "e1"));
+    list.add(new Employee("2", "e2"));
+    list.add(new Employee("3", "e3"));
+    list.add(new Employee("4", "e4"));
+    list.add(new Employee("5", "e5"));
+    list.add(new Employee("6", "e6"));
+    list.add(new Employee("7", "e7"));
+    list.add(new Employee("8", "e8"));
+    list.add(new Employee("9", "e9"));
+
+    list.add(new Employee("10", "e10"));
+    list.add(new Employee("11", "e11"));
+    list.add(new Employee("12", "e12"));
+    list.add(new Employee("13", "e13"));
+    list.add(new Employee("14", "e14"));
+    list.add(new Employee("15", "e15"));
+    InnerIterator<Employee> innerIterator = new PrintNEmpIterator(list, 1);
+    boolean result = innerIterator.traverse();
+    System.out.println("result = " + result);
+  }
+
+  @Test
+  public void innerIterator_printFilterEmployee() {
+    AbstractList<Employee> list = new List<>();
+    list.add(new Employee("0", "e0"));
+    list.add(new Employee("1", "e1"));
+    list.add(new Employee("2", "e2"));
+    list.add(new Employee("3", "e3"));
+    list.add(new Employee("4", "e4"));
+    list.add(new Employee("5", "e5"));
+    list.add(new Employee("6", "e6"));
+    list.add(new Employee("7", "e7"));
+    list.add(new Employee("8", "e8"));
+    list.add(new Employee("9", "e9"));
+
+    list.add(new Employee("10", "e10"));
+    list.add(new Employee("11", "e11"));
+    list.add(new Employee("12", "e12"));
+    list.add(new Employee("13", "e13"));
+    list.add(new Employee("14", "e14"));
+    list.add(new Employee("15", "e15"));
+    InnerIterator<Employee> innerIterator = new FilterIterator(list, new IterFilter<Employee>() {
+
+      @Override
+      public boolean correct(Employee employee) {
+        return "12".compareToIgnoreCase(employee.getId()) > 0;
+      }
+    });
+    boolean result = innerIterator.traverse();
+    System.out.println("result = " + result);
   }
 }
