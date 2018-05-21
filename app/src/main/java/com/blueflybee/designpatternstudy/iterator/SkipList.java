@@ -1,22 +1,18 @@
 package com.blueflybee.designpatternstudy.iterator;
 
-
 /**
  * <pre>
  *     author : shaojun
  *     e-mail : wusj@qtec.cn
- *     time   : 2018/05/18
+ *     time   : 2018/05/21
  *     desc   :
  *     version: 1.0
  * </pre>
  */
-public class List<E> extends AbstractList<E> implements Traversable<E>{
+public class SkipList<E> extends AbstractList<E> implements Traversable<E>{
 
   private Object[] items = new Object[100];
   private int count = 0;
-
-  public List() {
-  }
 
   @Override
   public int count() {
@@ -30,23 +26,12 @@ public class List<E> extends AbstractList<E> implements Traversable<E>{
 
   @Override
   public E remove(int index) {
-    if (index >= count)
-      throw new IndexOutOfBoundsException(outOfBoundsMsg(index));
-
-    E oldValue = (E) items[index];
-
-    int numMoved = count - index - 1;
-    if (numMoved > 0)
-      System.arraycopy(items, index + 1, items, index,
-          numMoved);
-    items[--count] = null; // clear to let GC do its work
-
-    return oldValue;
+    return null;
   }
 
   @Override
   public Iterator<E> iterator() {
-    return new ListIterator<>(this);
+    return new SkipListIterator<>(this);
   }
 
   @Override
@@ -54,14 +39,8 @@ public class List<E> extends AbstractList<E> implements Traversable<E>{
     return (E) items[index];
   }
 
-
   @Override
   public Iterator<E> getIterator(AbstractList<E> list) {
     return super.getIterator(list);
   }
-
-  private String outOfBoundsMsg(int index) {
-    return "Index: " + index + ", Size: " + count;
-  }
-
 }

@@ -10,6 +10,8 @@ package com.blueflybee.designpatternstudy.iterator;
  * </pre>
  */
 public abstract class AbstractList<E> {
+  protected Traversable<E> mTraver;
+
   public abstract int count();
 
   public abstract void add(E e);
@@ -19,4 +21,15 @@ public abstract class AbstractList<E> {
   public abstract Iterator<E> iterator();
 
   public abstract E get(int index);
+
+  public void setTraver(Traversable traver) {
+    mTraver = traver;
+  }
+
+  public Iterator<E> getIterator(AbstractList<E> list) {
+    if (mTraver != null) {
+      return mTraver.getIterator(list);
+    }
+    return null;
+  }
 }

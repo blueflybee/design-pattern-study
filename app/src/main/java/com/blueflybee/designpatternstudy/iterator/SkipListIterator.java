@@ -9,14 +9,14 @@ package com.blueflybee.designpatternstudy.iterator;
  *     version: 1.0
  * </pre>
  */
-public class ListIterator<E> extends Iterator<E> {
+public class SkipListIterator<E> extends Iterator<E> {
 
 
   private final int mCount;
   private AbstractList<E> mList;
   private int mIndex = 0;
 
-  public ListIterator(AbstractList<E> list) {
+  public SkipListIterator(AbstractList<E> list) {
     mList = list;
     mCount = list.count();
   }
@@ -33,7 +33,7 @@ public class ListIterator<E> extends Iterator<E> {
 
   @Override
   public void next() {
-    mIndex++;
+    mIndex += 2;
   }
 
   @Override

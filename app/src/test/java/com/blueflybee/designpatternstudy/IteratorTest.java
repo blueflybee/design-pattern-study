@@ -4,6 +4,12 @@ import com.blueflybee.designpatternstudy.iterator.AbstractList;
 import com.blueflybee.designpatternstudy.iterator.Employee;
 import com.blueflybee.designpatternstudy.iterator.Iterator;
 import com.blueflybee.designpatternstudy.iterator.List;
+import com.blueflybee.designpatternstudy.iterator.ListIterator;
+import com.blueflybee.designpatternstudy.iterator.ListTraver;
+import com.blueflybee.designpatternstudy.iterator.SkipList;
+import com.blueflybee.designpatternstudy.iterator.SkipListIterator;
+import com.blueflybee.designpatternstudy.iterator.SkipListTraver;
+import com.blueflybee.designpatternstudy.iterator.Traversable;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -144,4 +150,73 @@ public class IteratorTest {
 
   }
 
+  @Test
+  public void skipList_add_Correct() {
+    AbstractList<Employee> list = new SkipList<>();
+    int count = list.count();
+
+    assertEquals(0, count);
+
+    list.add(mEmployee);
+
+    assertEquals(1, list.count());
+  }
+
+  @Test
+  public void skipIterator_moveNext_Correct() {
+    AbstractList<Employee> list = new SkipList<>();
+    list.add(new Employee());
+    Iterator<Employee> iterator = list.iterator();
+    assertTrue(iterator instanceof SkipListIterator);
+    iterator.first();
+    int index = iterator.index();
+    assertEquals(0, index);
+
+    iterator.next();
+    index = iterator.index();
+    assertEquals(1, index);
+
+  }
+
+  @Test
+  public void createTraverListIterator_Correct() {
+    AbstractList<Employee> list = new List<>();
+    list.setTraver(new ListTraver());
+    Iterator<Employee> iterator = list.getIterator(list);
+    assertTrue(iterator instanceof ListIterator);
+  }
+
+  @Test
+  public void createTraverSkipListIterator_Correct() {
+    AbstractList<Employee> list = new SkipList<>();
+    list.setTraver(new SkipListTraver());
+    Iterator<Employee> iterator = list.getIterator(list);
+    assertTrue(iterator instanceof SkipListIterator);
+  }
+
+  @Test
+  public void skipIterator_currentItem_Correct() {
+    AbstractList<Employee> list = new SkipList<>();
+    list.setTraver(new SkipListTraver());
+    Employee e1 = new Employee("0", "e0");
+    list.add(e1);
+    list.add(new Employee("1", "e1"));
+    list.add(new Employee("2", "e2"));
+    list.add(new Employee("3", "e3"));
+    list.add(new Employee("4", "e4"));
+    list.add(new Employee("5", "e5"));
+    list.add(new Employee("6", "e6"));
+    list.add(new Employee("7", "e7"));
+    list.add(new Employee("8", "e8"));
+    list.add(new Employee("9", "e9"));
+    Iterator<Employee> iterator = list.getIterator(list);
+    assertTrue(iterator instanceof SkipListIterator);
+
+    for (iterator.first();iterator.hasNext(); iterator.next()) {
+      Employee employee = iterator.currentItem();
+      assertNotNull(employee);
+      System.out.println("currentItem = " + employee);
+    }
+
+  }
 }
