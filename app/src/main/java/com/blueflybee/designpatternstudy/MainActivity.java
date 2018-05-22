@@ -23,26 +23,39 @@ public class MainActivity extends AppCompatActivity {
         "1、职责链模式（Chain of responsibility）",
         "2、命令模式（Command）",
         "3、解释器模式（Interpreter）",
+        "4、迭代器模式（Iterator）",
+        "5、中介者模式（Mediator）",
     };
     ListView listView = findViewById(R.id.list);
     listView.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, titles));
     listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
       @Override
       public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+        Intent intent;
         switch (position) {
           case 0:
-            Intent intent0 = new Intent(MainActivity.this, ChainOfResponsibilityActivity.class);
-            startActivity(intent0);
+            intent = new Intent(MainActivity.this, ChainOfResponsibilityActivity.class);
+            startActivity(intent);
             break;
 
           case 1:
-            Intent intent1 = new Intent(MainActivity.this, CommandActivity.class);
-            startActivity(intent1);
+            intent = new Intent(MainActivity.this, CommandActivity.class);
+            startActivity(intent);
             break;
-//
+
           case 2:
-            Intent intent2 = new Intent(MainActivity.this, InterpreterActivity.class);
-            startActivity(intent2);
+            intent = new Intent(MainActivity.this, InterpreterActivity.class);
+            startActivity(intent);
+            break;
+
+          case 3:
+            intent = new Intent(MainActivity.this, InterpreterActivity.class);
+            startActivity(intent);
+            break;
+
+          case 4:
+            intent = new Intent(MainActivity.this, InterpreterActivity.class);
+            startActivity(intent);
             break;
 
           default:
