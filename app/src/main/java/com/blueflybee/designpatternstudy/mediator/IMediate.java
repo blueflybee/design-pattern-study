@@ -12,7 +12,6 @@ import android.app.Activity;
  * </pre>
  */
 public interface IMediate {
-  Activity getActivity();
 
   int getLayoutId();
 }

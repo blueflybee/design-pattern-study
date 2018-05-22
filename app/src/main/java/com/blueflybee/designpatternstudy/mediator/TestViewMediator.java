@@ -29,6 +29,7 @@ class TestViewMediator extends BaseViewMediator<ActivityMediatorBinding, TestVie
   @Override
   protected void onCreate(final ActivityMediatorBinding binding) {
     super.onCreate(binding);
+
     final String[] fonts = {
         "字体1",
         "字体2",

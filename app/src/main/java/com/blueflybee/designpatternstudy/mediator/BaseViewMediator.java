@@ -1,5 +1,6 @@
 package com.blueflybee.designpatternstudy.mediator;
 
+import android.app.Activity;
 import android.content.Context;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
@@ -19,7 +20,7 @@ public abstract class BaseViewMediator<B extends ViewDataBinding, M extends IMed
   protected M mMediateAble;
 
   public BaseViewMediator(M mediateAble) {
-    mBinding = DataBindingUtil.setContentView(mediateAble.getActivity(), mediateAble.getLayoutId());
+    mBinding = DataBindingUtil.setContentView((Activity) mediateAble, mediateAble.getLayoutId());
     mMediateAble = mediateAble;
   }
 
@@ -52,7 +53,7 @@ public abstract class BaseViewMediator<B extends ViewDataBinding, M extends IMed
   }
 
   protected Context getContext() {
-    return mMediateAble.getActivity();
+    return ((Activity) mMediateAble);
   }
 
   protected void onCreate(B binding) {

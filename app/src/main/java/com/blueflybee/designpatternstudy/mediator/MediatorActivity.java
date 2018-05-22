@@ -21,11 +21,6 @@ public class MediatorActivity extends AppCompatActivity implements TestViewMedia
   }
 
   @Override
-  public Activity getActivity() {
-    return this;
-  }
-
-  @Override
   public int getLayoutId() {
     return R.layout.activity_mediator;
   }
