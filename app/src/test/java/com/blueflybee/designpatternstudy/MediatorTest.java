@@ -3,9 +3,9 @@ package com.blueflybee.designpatternstudy;
 import com.blueflybee.designpatternstudy.command.Command;
 import com.blueflybee.designpatternstudy.command.Document;
 import com.blueflybee.designpatternstudy.command.PasteCommand;
-import com.blueflybee.designpatternstudy.mediator.ViewMediator;
+import com.blueflybee.designpatternstudy.mediator.DialogDirector;
 import com.blueflybee.designpatternstudy.mediator.EntryField;
-import com.blueflybee.designpatternstudy.mediator.FontViewMediator;
+import com.blueflybee.designpatternstudy.mediator.FontDialogDirector;
 import com.blueflybee.designpatternstudy.mediator.Widget;
 
 import org.junit.Test;
@@ -30,19 +30,19 @@ public class MediatorTest {
 
   @Test
   public void showDialog_isExecute() throws Exception {
-    ViewMediator viewMediator = spy(new FontViewMediator());
-    viewMediator.showDialog();
-    verify(viewMediator).showDialog();
-    verify(viewMediator).createWidgets();
+    DialogDirector dialogDirector = spy(new FontDialogDirector());
+    dialogDirector.showDialog();
+    verify(dialogDirector).showDialog();
+    verify(dialogDirector).createWidgets();
   }
 
   @Test
   public void EntryFieldChange_directorChange() throws Exception {
-    ViewMediator viewMediator = spy(new FontViewMediator());
-    Widget widget = spy(new EntryField(viewMediator));
+    DialogDirector dialogDirector = spy(new FontDialogDirector());
+    Widget widget = spy(new EntryField(dialogDirector));
     widget.changed();
     verify(widget).changed();
-    verify(viewMediator).onWidgetChanged(widget);
+    verify(dialogDirector).onWidgetChanged(widget);
   }
 
   @Test

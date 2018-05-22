@@ -11,13 +11,13 @@ package com.blueflybee.designpatternstudy.mediator;
  */
 public abstract class Widget {
 
-  private final ViewMediator mViewMediator;
+  private final DialogDirector mDialogDirector;
 
-  public Widget(ViewMediator viewMediator) {
-    mViewMediator = viewMediator;
+  public Widget(DialogDirector dialogDirector) {
+    mDialogDirector = dialogDirector;
   }
 
   public void changed() {
-    mViewMediator.onWidgetChanged(this);
+    mDialogDirector.onWidgetChanged(this);
   }
 }

@@ -9,23 +9,26 @@
         android:orientation="vertical">
 
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="orExp = ((true and x) or (y and (not x)))  (x = false  y = true)"/>
-
-        <TextView
-            android:id="@+id/tv_result"
+        <EditText
+            android:id="@+id/et1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text=""/>
 
+
+        <ListView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"/>
+
+
         <Button
-            android:id="@+id/btn_evaluate"
+            android:enabled="false"
+            android:layout_marginTop="20dp"
+            android:id="@+id/btn_confirm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="command paste"/>
-
+            android:text="confirm"/>
 
 
     </LinearLayout>

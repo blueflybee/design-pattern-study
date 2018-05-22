@@ -9,7 +9,7 @@ package com.blueflybee.designpatternstudy.mediator;
  *     version: 1.0
  * </pre>
  */
-public class FontViewMediator extends ViewMediator {
+public class FontDialogDirector extends DialogDirector {
 
   @Override
   public void createWidgets() {

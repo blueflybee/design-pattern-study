@@ -9,9 +9,13 @@ package com.blueflybee.designpatternstudy.mediator;
  *     version: 1.0
  * </pre>
  */
-public class EntryField extends Widget {
+public abstract class DialogDirector {
 
-  public EntryField(DialogDirector dialogDirector) {
-    super(dialogDirector);
+  public void showDialog() {
+    createWidgets();
   }
+
+  public abstract void createWidgets();
+
+  public abstract void onWidgetChanged(Widget widget);
 }

@@ -6,55 +6,27 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.blueflybee.designpatternstudy.R;
-import com.blueflybee.designpatternstudy.databinding.ActivityInterpreterBinding;
-import com.blueflybee.designpatternstudy.interpreter.AndExp;
-import com.blueflybee.designpatternstudy.interpreter.BooleanContext;
-import com.blueflybee.designpatternstudy.interpreter.ConstantExp;
-import com.blueflybee.designpatternstudy.interpreter.NotExp;
-import com.blueflybee.designpatternstudy.interpreter.OrExp;
-import com.blueflybee.designpatternstudy.interpreter.VariableExp;
+import com.blueflybee.designpatternstudy.databinding.ActivityMediatorBinding;
 
 public class MediatorActivity extends AppCompatActivity {
 
-  private ActivityInterpreterBinding mBinding;
+  private ActivityMediatorBinding mBinding;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
-    mBinding = DataBindingUtil.setContentView(this, R.layout.activity_interpreter);
+    mBinding = DataBindingUtil.setContentView(this, R.layout.activity_mediator);
 
-    initData();
-
-    initView();
-
-  }
-
-  private void initData() {
-  }
-
-  private void initView() {
-    mBinding.btnEvaluate.setOnClickListener(new View.OnClickListener() {
+    ViewMediator viewMediator = new ViewMediator(mBinding);
+    viewMediator.setOnConfirmBtnClickListener(new ViewMediator.OnConfirmBtnClickListener() {
       @Override
       public void onClick(View v) {
-        VariableExp x = new VariableExp("x");
-        VariableExp y = new VariableExp("y");
-        AndExp exp1 = new AndExp(new ConstantExp(true), x);
-        AndExp exp2 = new AndExp(y, new NotExp(x));
-
-        OrExp orExp = new OrExp(exp1, exp2);
-        BooleanContext context = new BooleanContext();
-
-        context.assign(x, new ConstantExp(false));
-        context.assign(y, new ConstantExp(true));
-
-        System.out.println("orExp = " + orExp);
-        boolean result = orExp.evaluate(context);
-        mBinding.tvResult.setText(orExp.toString() + " = " + result);
+        System.out.println("v = " + v);
       }
     });
 
-
-
   }
+
+
 }
