@@ -11,7 +11,7 @@ import android.app.Activity;
  *     version: 1.0
  * </pre>
  */
-public interface MediateAble {
+public interface IMediate {
   Activity getActivity();
 
   int getLayoutId();

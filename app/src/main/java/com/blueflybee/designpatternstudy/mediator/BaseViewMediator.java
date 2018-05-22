@@ -13,7 +13,7 @@ import android.databinding.ViewDataBinding;
  *     version: 1.0
  * </pre>
  */
-public abstract class BaseViewMediator<B extends ViewDataBinding, M extends MediateAble> {
+public abstract class BaseViewMediator<B extends ViewDataBinding, M extends IMediate> {
 
   private final B mBinding;
   protected M mMediateAble;

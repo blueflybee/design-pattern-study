@@ -85,7 +85,7 @@ class TestViewMediator extends BaseViewMediator<ActivityMediatorBinding, TestVie
     });
   }
 
-  interface TestMediatorCallBack extends MediateAble {
+  interface TestMediatorCallBack extends IMediate {
     void onConfirmBtnClick(View v);
   }
 
