@@ -30,7 +30,7 @@
             android:screenOrientation="portrait"/>
 
         <activity
-            android:name=".mediator.MediatorActivity"
+            android:name=".mediator.TestMediatorActivity"
             android:screenOrientation="portrait"/>
     </application>
 

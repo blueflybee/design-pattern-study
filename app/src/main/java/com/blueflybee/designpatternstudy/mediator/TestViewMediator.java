@@ -1,6 +1,5 @@
 package com.blueflybee.designpatternstudy.mediator;
 
-import android.content.Context;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -20,16 +19,16 @@ import com.blueflybee.designpatternstudy.databinding.ActivityMediatorBinding;
  *     version: 1.0
  * </pre>
  */
-class ViewMediator {
+class TestViewMediator extends BaseViewMediator<ActivityMediatorBinding, TestViewMediator.TestMediatorCallBack> {
 
-  private OnConfirmBtnClickListener mOnConfirmBtnClickListener;
 
-  ViewMediator(final ActivityMediatorBinding binding) {
-    init(binding);
+  public TestViewMediator(TestMediatorCallBack mediateAble) {
+    super(mediateAble);
   }
 
-  private void init(final ActivityMediatorBinding binding) {
-    Context context = binding.getRoot().getContext();
+  @Override
+  protected void onCreate(final ActivityMediatorBinding binding) {
+    super.onCreate(binding);
     final String[] fonts = {
         "字体1",
         "字体2",
@@ -42,7 +41,7 @@ class ViewMediator {
         "字体9",
         "字体10",
     };
-    binding.list.setAdapter(new ArrayAdapter<>(context, android.R.layout.simple_list_item_single_choice, fonts));
+    binding.list.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_single_choice, fonts));
     binding.list.setChoiceMode(AbsListView.CHOICE_MODE_SINGLE);
     binding.list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
       @Override
@@ -78,20 +77,16 @@ class ViewMediator {
     binding.btnConfirm.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        if (mOnConfirmBtnClickListener != null) {
-          mOnConfirmBtnClickListener.onClick(v);
+        if (mMediateAble != null) {
+          mMediateAble.onConfirmBtnClick(v);
         }
 
       }
     });
   }
 
-  void setOnConfirmBtnClickListener(OnConfirmBtnClickListener onConfirmBtnClickListener) {
-    mOnConfirmBtnClickListener = onConfirmBtnClickListener;
-  }
-
-  interface OnConfirmBtnClickListener{
-    void onClick(View v);
+  interface TestMediatorCallBack extends MediateAble {
+    void onConfirmBtnClick(View v);
   }
 
 }
