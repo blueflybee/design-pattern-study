@@ -56,31 +56,31 @@ public abstract class BaseViewMediator<B extends ViewDataBinding, M extends IMed
     return ((Activity) mMediateAble);
   }
 
-  protected void onCreate(B binding) {
+  protected void onCreate(final B binding) {
 
   }
 
-  protected void onStart(B binding) {
+  protected void onStart(final B binding) {
 
   }
 
-  protected void onRestart(B binding) {
+  protected void onRestart(final B binding) {
 
   }
 
-  protected void onResume(B binding) {
+  protected void onResume(final B binding) {
 
   }
 
-  protected void onPause(B binding) {
+  protected void onPause(final B binding) {
 
   }
 
-  protected void onStop(B binding) {
+  protected void onStop(final B binding) {
 
   }
 
-  protected void onDestroy(B binding) {
+  protected void onDestroy(final B binding) {
 
   }
 
