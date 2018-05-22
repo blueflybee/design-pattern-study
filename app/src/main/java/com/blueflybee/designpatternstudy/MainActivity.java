@@ -11,7 +11,7 @@ import android.widget.ListView;
 import com.blueflybee.designpatternstudy.chainofresponsibility.ChainOfResponsibilityActivity;
 import com.blueflybee.designpatternstudy.command.CommandActivity;
 import com.blueflybee.designpatternstudy.interpreter.InterpreterActivity;
-import com.blueflybee.designpatternstudy.mediator.TestMediatorActivity;
+import com.blueflybee.designpatternstudy.mediator.MediatorActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
             break;
 
           case 4:
-            intent = new Intent(MainActivity.this, TestMediatorActivity.class);
+            intent = new Intent(MainActivity.this, MediatorActivity.class);
             startActivity(intent);
             break;
 

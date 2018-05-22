@@ -7,7 +7,7 @@ import android.view.View;
 
 import com.blueflybee.designpatternstudy.R;
 
-public class TestMediatorActivity extends AppCompatActivity implements TestViewMediator.TestMediatorCallBack {
+public class MediatorActivity extends AppCompatActivity implements TestViewMediator.TestMediatorCallBack {
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
