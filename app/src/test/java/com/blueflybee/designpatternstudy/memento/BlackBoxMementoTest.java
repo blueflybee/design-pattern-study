@@ -1,4 +1,4 @@
-package com.blueflybee.designpatternstudy;
+package com.blueflybee.designpatternstudy.memento;
 
 import com.blueflybee.designpatternstudy.memento.blackboxmemento.Caretaker;
 import com.blueflybee.designpatternstudy.memento.blackboxmemento.IMemento;
