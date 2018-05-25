@@ -1,4 +1,4 @@
-package com.blueflybee.designpatternstudy.memento;
+package com.blueflybee.designpatternstudy.memento.blackboxmemento;
 
 /**
  * <pre>

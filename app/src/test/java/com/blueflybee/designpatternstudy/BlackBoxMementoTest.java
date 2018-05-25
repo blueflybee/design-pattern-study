@@ -1,8 +1,8 @@
 package com.blueflybee.designpatternstudy;
 
-import com.blueflybee.designpatternstudy.memento.Caretaker;
-import com.blueflybee.designpatternstudy.memento.IMemento;
-import com.blueflybee.designpatternstudy.memento.Originator;
+import com.blueflybee.designpatternstudy.memento.blackboxmemento.Caretaker;
+import com.blueflybee.designpatternstudy.memento.blackboxmemento.IMemento;
+import com.blueflybee.designpatternstudy.memento.blackboxmemento.Originator;
 
 import org.junit.Test;
 
@@ -20,7 +20,7 @@ import static org.junit.Assert.*;
  *     version: 1.0
  * </pre>
  */
-public class MementoTest {
+public class BlackBoxMementoTest {
 
   public static final String STATE_1 = "state_1";
   public static final String STATE_2 = "state_2";
