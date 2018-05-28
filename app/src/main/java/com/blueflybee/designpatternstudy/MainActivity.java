@@ -12,6 +12,7 @@ import com.blueflybee.designpatternstudy.chainofresponsibility.ChainOfResponsibi
 import com.blueflybee.designpatternstudy.command.CommandActivity;
 import com.blueflybee.designpatternstudy.interpreter.InterpreterActivity;
 import com.blueflybee.designpatternstudy.mediator.MediatorActivity;
+import com.blueflybee.designpatternstudy.memento.MementoActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         "3、解释器模式（Interpreter）",
         "4、迭代器模式（Iterator）",
         "5、中介者模式（Mediator）",
+        "6、备忘录模式（Memento）",
     };
     ListView listView = findViewById(R.id.list);
     listView.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, titles));
@@ -56,6 +58,11 @@ public class MainActivity extends AppCompatActivity {
 
           case 4:
             intent = new Intent(MainActivity.this, MediatorActivity.class);
+            startActivity(intent);
+            break;
+
+          case 5:
+            intent = new Intent(MainActivity.this, MementoActivity.class);
             startActivity(intent);
             break;
 
