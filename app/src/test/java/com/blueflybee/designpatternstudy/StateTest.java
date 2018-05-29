@@ -6,16 +6,19 @@ import com.blueflybee.designpatternstudy.observer.Observer;
 import com.blueflybee.designpatternstudy.observer.Subject;
 import com.blueflybee.designpatternstudy.state.TCPClosed;
 import com.blueflybee.designpatternstudy.state.TCPConnection;
+import com.blueflybee.designpatternstudy.state.TCPEstablished;
+import com.blueflybee.designpatternstudy.state.TCPListen;
 import com.blueflybee.designpatternstudy.state.TCPState;
 
 import org.junit.Test;
 import org.mockito.Matchers;
 
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.verifyZeroInteractions;
 
 /**
  * <pre>
@@ -29,7 +32,7 @@ import static org.mockito.Mockito.verifyZeroInteractions;
 public class StateTest {
 
   @Test
-  public void tcpState_default_methods() throws Exception {
+  public void tcpState_default_methods() {
     TCPState state = spy(TCPState.class);
     TCPConnection connection = mock(TCPConnection.class);
     state.activeOpen(connection);
@@ -50,7 +53,7 @@ public class StateTest {
   }
 
   @Test
-  public void tcpConnection_methods() throws Exception {
+  public void tcpConnection_methods() {
     TCPState state = spy(TCPState.class);
     TCPConnection connection = spy(new TCPConnection());
     connection.setState(state);
@@ -73,10 +76,43 @@ public class StateTest {
   }
 
   @Test
-  public void tcpState_closed_established() throws Exception {
+  public void tcpState_closed_established() {
     TCPConnection connection = spy(new TCPConnection());
+    connection.activeOpen();
+    TCPState state = connection.getState();
+    assertTrue(state instanceof TCPEstablished);
+  }
 
+  @Test
+  public void tcpState_closed_listen() {
+    TCPConnection connection = spy(new TCPConnection());
+    connection.passiveOpen();
+    TCPState state = connection.getState();
+    assertTrue(state instanceof TCPListen);
+  }
 
+  @Test
+  public void tcpState_established_listen() {
+    TCPConnection connection = spy(new TCPConnection());
+    connection.activeOpen();
+    TCPState state = connection.getState();
+    assertTrue(state instanceof TCPEstablished);
+
+    connection.close();
+    state = connection.getState();
+    assertTrue(state instanceof TCPListen);
+  }
+
+  @Test
+  public void tcpState_listen_established() {
+    TCPConnection connection = spy(new TCPConnection());
+    connection.passiveOpen();
+    TCPState state = connection.getState();
+    assertTrue(state instanceof TCPListen);
+
+    connection.send();
+    state = connection.getState();
+    assertTrue(state instanceof TCPEstablished);
   }
 
 

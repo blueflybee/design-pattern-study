@@ -42,4 +42,8 @@ public class TCPConnection {
   public TCPState getState() {
     return mTCPState;
   }
+
+  void changeState(TCPState state) {
+    mTCPState = state;
+  }
 }

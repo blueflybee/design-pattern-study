@@ -29,4 +29,11 @@ public class TCPState {
   public void transmit(TCPConnection connection) {
 
   }
+
+
+  protected void changeState(TCPConnection connection, TCPState state) {
+    connection.changeState(state);
+
+  }
+
 }

@@ -23,4 +23,17 @@ public class TCPClosed extends TCPState {
     return sTCPClosed;
   }
 
+  @Override
+  public void activeOpen(TCPConnection connection) {
+    super.activeOpen(connection);
+    //send SYN, receive SYN, ACK, etc.
+    changeState(connection, TCPEstablished.instance());
+  }
+
+  @Override
+  public void passiveOpen(TCPConnection connection) {
+    super.passiveOpen(connection);
+    //send SYN, receive SYN, ACK, etc.
+    changeState(connection, TCPListen.instance());
+  }
 }
