@@ -15,6 +15,7 @@ import com.blueflybee.designpatternstudy.mediator.MediatorActivity;
 import com.blueflybee.designpatternstudy.memento.MementoActivity;
 import com.blueflybee.designpatternstudy.observer.ObserverActivity;
 import com.blueflybee.designpatternstudy.state.StateActivity;
+import com.blueflybee.designpatternstudy.strategy.StrategyActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         "6、备忘录模式（Memento）",
         "7、观察者模式（Observer）",
         "8、状态模式（State）",
+        "9、策略模式（Strategy）",
     };
     ListView listView = findViewById(R.id.list);
     listView.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, titles));
@@ -77,6 +79,11 @@ public class MainActivity extends AppCompatActivity {
 
           case 7:
             intent = new Intent(MainActivity.this, StateActivity.class);
+            startActivity(intent);
+            break;
+
+          case 8:
+            intent = new Intent(MainActivity.this, StrategyActivity.class);
             startActivity(intent);
             break;
 

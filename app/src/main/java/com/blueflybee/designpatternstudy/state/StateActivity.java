@@ -14,7 +14,6 @@ import com.blueflybee.designpatternstudy.observer.DigitalClock;
 public class StateActivity extends AppCompatActivity {
 
   private ActivityStateBinding mBinding;
-  private ClockTimer mTimer;
   private TCPConnection mConnection;
 
   @Override

@@ -22,6 +22,6 @@ public class AppleStrategy extends Strategy {
 
   @Override
   public void evaluate(StrategyContext context) {
-
+    System.out.println("apple strategy");
   }
 }

@@ -44,6 +44,10 @@
         <activity
             android:name=".state.StateActivity"
             android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".strategy.StrategyActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

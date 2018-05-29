@@ -16,6 +16,6 @@ public class WatermelonStrategy extends Strategy {
 
   @Override
   public void evaluate(StrategyContext context) {
-
+    System.out.println("watermelon strategy");
   }
 }
