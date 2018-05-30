@@ -42,61 +42,52 @@ public class MainActivity extends AppCompatActivity {
     listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
       @Override
       public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-        Intent intent;
+        Intent intent = null;
         switch (position) {
           case 0:
             intent = new Intent(MainActivity.this, ChainOfResponsibilityActivity.class);
-            startActivity(intent);
             break;
 
           case 1:
             intent = new Intent(MainActivity.this, CommandActivity.class);
-            startActivity(intent);
             break;
 
           case 2:
             intent = new Intent(MainActivity.this, InterpreterActivity.class);
-            startActivity(intent);
             break;
 
           case 3:
             intent = new Intent(MainActivity.this, InterpreterActivity.class);
-            startActivity(intent);
             break;
 
           case 4:
             intent = new Intent(MainActivity.this, MediatorActivity.class);
-            startActivity(intent);
             break;
 
           case 5:
             intent = new Intent(MainActivity.this, MementoActivity.class);
-            startActivity(intent);
             break;
 
           case 6:
             intent = new Intent(MainActivity.this, ObserverActivity.class);
-            startActivity(intent);
             break;
 
           case 7:
             intent = new Intent(MainActivity.this, StateActivity.class);
-            startActivity(intent);
             break;
 
           case 8:
             intent = new Intent(MainActivity.this, StrategyActivity.class);
-            startActivity(intent);
             break;
 
           case 9:
             intent = new Intent(MainActivity.this, TemplateMethodActivity.class);
-            startActivity(intent);
             break;
 
           default:
             break;
         }
+        startActivity(intent);
 
       }
     });
