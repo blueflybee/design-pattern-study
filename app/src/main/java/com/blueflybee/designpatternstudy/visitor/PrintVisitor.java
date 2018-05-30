@@ -56,8 +56,11 @@ public class PrintVisitor extends EquipmentVisitor {
     mSb.append(composite.getName()).append("  ").append(price).append("元").append("\n");
   }
 
-  public void print() {
+  public String print() {
     mSb.append(LINE);
     System.out.println(mSb);
+    return mSb.toString();
   }
+
+
 }

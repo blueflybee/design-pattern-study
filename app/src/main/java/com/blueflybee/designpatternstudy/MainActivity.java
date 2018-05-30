@@ -17,6 +17,7 @@ import com.blueflybee.designpatternstudy.observer.ObserverActivity;
 import com.blueflybee.designpatternstudy.state.StateActivity;
 import com.blueflybee.designpatternstudy.strategy.StrategyActivity;
 import com.blueflybee.designpatternstudy.templatemethod.TemplateMethodActivity;
+import com.blueflybee.designpatternstudy.visitor.VisitorActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,16 +27,17 @@ public class MainActivity extends AppCompatActivity {
     setContentView(R.layout.activity_main);
 
     String[] titles = {
-        "1、职责链模式（Chain of responsibility）",
-        "2、命令模式（Command）",
-        "3、解释器模式（Interpreter）",
-        "4、迭代器模式（Iterator）",
-        "5、中介者模式（Mediator）",
-        "6、备忘录模式（Memento）",
-        "7、观察者模式（Observer）",
-        "8、状态模式（State）",
-        "9、策略模式（Strategy）",
-        "10、模板方法（Template method）",
+        "1、职责链模式（Chain of responsibility 对象行为）",
+        "2、命令模式（Command 对象行为）",
+        "3、解释器模式（Interpreter 对象行为）",
+        "4、迭代器模式（Iterator 对象行为）",
+        "5、中介者模式（Mediator 对象行为）",
+        "6、备忘录模式（Memento 对象行为）",
+        "7、观察者模式（Observer 对象行为）",
+        "8、状态模式（State 对象行为）",
+        "9、策略模式（Strategy 对象行为）",
+        "10、模板方法（Template method 类行为）",
+        "11、访问者模式（Visitor 对象行为）",
     };
     ListView listView = findViewById(R.id.list);
     listView.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, titles));
@@ -82,6 +84,10 @@ public class MainActivity extends AppCompatActivity {
 
           case 9:
             intent = new Intent(MainActivity.this, TemplateMethodActivity.class);
+            break;
+
+          case 10:
+            intent = new Intent(MainActivity.this, VisitorActivity.class);
             break;
 
           default:
