@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.blueflybee.designpatternstudy.adapter.AdapterActivity;
 import com.blueflybee.designpatternstudy.chainofresponsibility.ChainOfResponsibilityActivity;
 import com.blueflybee.designpatternstudy.command.CommandActivity;
 import com.blueflybee.designpatternstudy.interpreter.InterpreterActivity;
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         "9、策略模式（Strategy 对象行为）",
         "10、模板方法（Template method 类行为）",
         "11、访问者模式（Visitor 对象行为）",
+        "12、适配器模式（Adapter 类&对象结构）",
     };
     ListView listView = findViewById(R.id.list);
     listView.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, titles));
@@ -88,6 +90,10 @@ public class MainActivity extends AppCompatActivity {
 
           case 10:
             intent = new Intent(MainActivity.this, VisitorActivity.class);
+            break;
+
+          case 11:
+            intent = new Intent(MainActivity.this, AdapterActivity.class);
             break;
 
           default:

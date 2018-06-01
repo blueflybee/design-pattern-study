@@ -56,6 +56,10 @@
         <activity
             android:name=".visitor.VisitorActivity"
             android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".adapter.AdapterActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
