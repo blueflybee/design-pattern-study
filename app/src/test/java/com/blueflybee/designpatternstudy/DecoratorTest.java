@@ -34,7 +34,7 @@ import static org.mockito.Mockito.verify;
 public class DecoratorTest {
 
   public static final String FILE_PATH = "/home/shaojun/桌面/logcat/log.txt";
-  public static final String STR_CONTENT = "1234567890abcdefg";
+  public static final String STR_CONTENT = "1234567890abcdefg你好！";
   public static final String BASE_64_STR = "H8KLCAAAAAAAAAAzNDI2MTUzwrfCsDRITEpOSU1LBwBZMMKNXhEAAAA=";
 
   @Test

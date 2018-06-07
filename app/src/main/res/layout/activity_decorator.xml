@@ -10,7 +10,7 @@
 
         <EditText
             android:id="@+id/et_original_text"
-            android:text="1234567890abcdefghABC"
+            android:text="1234567890ab)@%$d\\|efgh达科技发"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
