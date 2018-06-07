@@ -13,6 +13,7 @@ import com.blueflybee.designpatternstudy.bridge.BridgeActivity;
 import com.blueflybee.designpatternstudy.chainofresponsibility.ChainOfResponsibilityActivity;
 import com.blueflybee.designpatternstudy.command.CommandActivity;
 import com.blueflybee.designpatternstudy.composite.CompositeActivity;
+import com.blueflybee.designpatternstudy.decorator.DecoratorActivity;
 import com.blueflybee.designpatternstudy.interpreter.InterpreterActivity;
 import com.blueflybee.designpatternstudy.mediator.MediatorActivity;
 import com.blueflybee.designpatternstudy.memento.MementoActivity;
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         "12、适配器模式（Adapter 类&对象结构）",
         "13、桥接模式（Bridge 对象结构）",
         "14、组合模式（Composite 对象结构）",
+        "15、装饰模式（Decorator 对象结构）",
     };
     ListView listView = findViewById(R.id.list);
     listView.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, titles));
@@ -106,6 +108,10 @@ public class MainActivity extends AppCompatActivity {
 
           case 13:
             intent = new Intent(MainActivity.this, CompositeActivity.class);
+            break;
+
+          case 14:
+            intent = new Intent(MainActivity.this, DecoratorActivity.class);
             break;
 
           default:
