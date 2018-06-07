@@ -93,17 +93,17 @@ public class DecoratorTest {
   }
 
   @Test
-  public void gzipBase64gzipBase64Base64Compress_write_read() {
+  public void gzipBase64gzipBase64Base64_write_read() {
+    //运行时动态自由组合编码解码方式
     DataStream stream = new FileDataStream(FILE_PATH);
     DataStream gzipStream = new GZIPCoder(new Base64Coder(new GZIPCoder(new Base64Coder(new Base64Coder(stream)))));
 
     String result = gzipStream.write(STR_CONTENT);
 
-    System.out.println("result = " + result);
-
     Base64Coder base64Coder = new Base64Coder(new Base64Coder(new GZIPCoder(new Base64Coder(new GZIPCoder(stream)))));
     String read = base64Coder.read(result);
-    System.out.println("read = " + read);
+
+    assertEquals(STR_CONTENT, read);
 
   }
 
