@@ -19,5 +19,8 @@ public class Character extends Glyph {
     return 1;
   }
 
-
+  @Override
+  public String print() {
+    return mName;
+  }
 }

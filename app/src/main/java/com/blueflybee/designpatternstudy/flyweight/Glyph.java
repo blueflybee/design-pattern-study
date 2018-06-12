@@ -14,16 +14,13 @@ import java.util.List;
  * </pre>
  */
 public class Glyph {
-  private final String mName;
-
+  protected final String mName;
 
   public Glyph(String name) {
-
     mName = name;
   }
 
   public void add(Glyph g) {
-
   }
 
   public int rowSize() {
@@ -37,5 +34,9 @@ public class Glyph {
   @Override
   public String toString() {
     return mName;
+  }
+
+  public String print() {
+    return null;
   }
 }

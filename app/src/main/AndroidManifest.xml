@@ -75,6 +75,9 @@
         <activity
             android:name=".facade.FacadeActivity"
             android:screenOrientation="portrait"/>
+        <activity
+            android:name=".flyweight.FlyweightActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

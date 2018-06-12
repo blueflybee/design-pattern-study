@@ -40,6 +40,15 @@ public class GlyphComposite extends Glyph {
   }
 
   @Override
+  public String print() {
+    StringBuilder sb = new StringBuilder();
+    for (Glyph glyph : mGlyphs) {
+      sb.append(glyph.print());
+    }
+    return sb.toString();
+  }
+
+  @Override
   public String toString() {
     return "GlyphComposite{" +
         "mGlyphs=" + mGlyphs +

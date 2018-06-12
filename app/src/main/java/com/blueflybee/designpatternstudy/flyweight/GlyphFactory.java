@@ -30,8 +30,6 @@ public class GlyphFactory {
       character = new Character(c);
       sCharacterMap.put(c, character);
     }
-    System.out.println("sCharacterMap = " + sCharacterMap.keySet());
-    System.out.println("sCharacterMap = " + sCharacterMap.size());
     return character;
   }
 
@@ -44,6 +42,8 @@ public class GlyphFactory {
     for (char aChar : chars) {
       row.add(createCharacter(String.valueOf(aChar)));
     }
+    System.out.println("sCharacterMap = " + sCharacterMap.keySet());
+    System.out.println("sCharacterMap = " + sCharacterMap.size());
     return column;
   }
 }
