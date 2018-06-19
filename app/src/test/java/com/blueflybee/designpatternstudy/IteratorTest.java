@@ -178,7 +178,7 @@ public class IteratorTest {
 
     iterator.next();
     index = iterator.index();
-    assertEquals(1, index);
+    assertEquals(2, index);
 
   }
 
