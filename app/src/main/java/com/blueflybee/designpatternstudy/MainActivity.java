@@ -20,6 +20,7 @@ import com.blueflybee.designpatternstudy.interpreter.InterpreterActivity;
 import com.blueflybee.designpatternstudy.mediator.MediatorActivity;
 import com.blueflybee.designpatternstudy.memento.MementoActivity;
 import com.blueflybee.designpatternstudy.observer.ObserverActivity;
+import com.blueflybee.designpatternstudy.proxy.ProxyActivity;
 import com.blueflybee.designpatternstudy.state.StateActivity;
 import com.blueflybee.designpatternstudy.strategy.StrategyActivity;
 import com.blueflybee.designpatternstudy.templatemethod.TemplateMethodActivity;
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         "15、装饰模式（Decorator 对象结构）",
         "16、外观模式（Facade 对象结构）",
         "17、享元模式（Flyweight 对象结构）",
+        "18、代理模式（Proxy 对象结构）",
     };
     ListView listView = findViewById(R.id.list);
     listView.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, titles));
@@ -125,6 +127,11 @@ public class MainActivity extends AppCompatActivity {
           case 16:
             intent = new Intent(MainActivity.this, FlyweightActivity.class);
             break;
+
+          case 17:
+            intent = new Intent(MainActivity.this, ProxyActivity.class);
+            break;
+
 
           default:
             break;
