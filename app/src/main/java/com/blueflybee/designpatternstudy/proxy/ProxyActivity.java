@@ -32,6 +32,7 @@ public class ProxyActivity extends AppCompatActivity {
   }
 
   private void initView() {
+    getSupportActionBar().setTitle("代理模式（Proxy 对象结构）");
     mBinding.btnDraw.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
