@@ -14,9 +14,11 @@ import java.util.List;
  */
 public class CarEquipment {
 
+  protected final String mName;
   protected float netPrice;
 
   public CarEquipment(String name) {
+    mName = name;
   }
 
   public void add(CarEquipment e) {
@@ -32,5 +34,9 @@ public class CarEquipment {
 
   public void setNetPrice(float netPrice) {
     this.netPrice = netPrice;
+  }
+
+  public String info() {
+    return mName;
   }
 }

@@ -42,4 +42,14 @@ public class CarEquipmentComposite extends CarEquipment {
     }
     return result;
   }
+
+  @Override
+  public String info() {
+    StringBuilder sb = new StringBuilder();
+    sb.append(mName).append(" :\n");
+    for (CarEquipment e : mEquipments) {
+      sb.append("   " + e.info()).append("\n");
+    }
+    return sb.toString();
+  }
 }
