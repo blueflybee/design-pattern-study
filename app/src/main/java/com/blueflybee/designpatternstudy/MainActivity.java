@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.blueflybee.designpatternstudy.abstractfactory.AbstractFactoryActivity;
 import com.blueflybee.designpatternstudy.adapter.AdapterActivity;
 import com.blueflybee.designpatternstudy.bridge.BridgeActivity;
 import com.blueflybee.designpatternstudy.chainofresponsibility.ChainOfResponsibilityActivity;
@@ -52,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         "16、外观模式（Facade 对象结构）",
         "17、享元模式（Flyweight 对象结构）",
         "18、代理模式（Proxy 对象结构）",
+        "19、抽象工厂模式（Abstract factory 对象创建）",
     };
     ListView listView = findViewById(R.id.list);
     listView.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, titles));
@@ -130,6 +132,10 @@ public class MainActivity extends AppCompatActivity {
 
           case 17:
             intent = new Intent(MainActivity.this, ProxyActivity.class);
+            break;
+
+          case 18:
+            intent = new Intent(MainActivity.this, AbstractFactoryActivity.class);
             break;
 
 

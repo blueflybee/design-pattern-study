@@ -74,7 +74,7 @@ public class AbstractFactoryTest {
   @Test
   public void carMaker_makeCommonCar() {
     CarMaker carMaker = spy(new CarMaker());
-    CarFactory factory = spy(new CarFactory());
+    CarFactory factory = spy(CarFactory.instance());
     CarEquipment car = carMaker.make(factory);
 
     verify(carMaker).make(any(CarFactory.class));
@@ -93,7 +93,7 @@ public class AbstractFactoryTest {
   @Test
   public void carMaker_makeUpgradeCar() {
     CarMaker carMaker = spy(new CarMaker());
-    CarFactory factory = spy(new UpgradeCarFactory());
+    CarFactory factory = spy(UpgradeCarFactory.instance());
     CarEquipment car = carMaker.make(factory);
 
     verify(carMaker).make(any(CarFactory.class));
@@ -112,7 +112,7 @@ public class AbstractFactoryTest {
   @Test
   public void carMaker_makeDeluxeCar() {
     CarMaker carMaker = spy(new CarMaker());
-    CarFactory factory = spy(new DeluxeCarFactory());
+    CarFactory factory = spy(DeluxeCarFactory.instance());
     CarEquipment car = carMaker.make(factory);
 
     verify(carMaker).make(any(CarFactory.class));

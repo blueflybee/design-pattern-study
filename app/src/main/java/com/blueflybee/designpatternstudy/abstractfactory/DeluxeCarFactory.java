@@ -21,6 +21,12 @@ import com.blueflybee.designpatternstudy.composite.Tire;
  * </pre>
  */
 public class DeluxeCarFactory extends CarFactory {
+  private static CarFactory sDeluxeCarFactory;
+
+  private DeluxeCarFactory() {
+    super();
+  }
+
   public CarEquipment makeCar() {
     return new CarEquipmentComposite("deluxe car");
   }
@@ -39,5 +45,13 @@ public class DeluxeCarFactory extends CarFactory {
 
   public MoonRoof makeMoonRoof() {
     return new DeluxeMoonRoof("deluxe moon roof");
+  }
+
+
+  public static CarFactory instance() {
+    if (sDeluxeCarFactory == null) {
+      sDeluxeCarFactory = new DeluxeCarFactory();
+    }
+    return sDeluxeCarFactory;
   }
 }

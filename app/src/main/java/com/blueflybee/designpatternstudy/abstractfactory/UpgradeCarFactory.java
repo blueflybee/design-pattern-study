@@ -21,6 +21,11 @@ import com.blueflybee.designpatternstudy.composite.UpgradeTire;
  * </pre>
  */
 public class UpgradeCarFactory extends CarFactory {
+  private static CarFactory sUpgradeCarFactory;
+
+  private UpgradeCarFactory() {
+    super();
+  }
 
   @Override
   public CarEquipment makeCar() {
@@ -45,5 +50,12 @@ public class UpgradeCarFactory extends CarFactory {
   @Override
   public MoonRoof makeMoonRoof() {
     return new UpgradeMoonRoof("upgrade moon roof");
+  }
+
+  public static CarFactory instance() {
+    if (sUpgradeCarFactory == null) {
+      sUpgradeCarFactory = new UpgradeCarFactory();
+    }
+    return sUpgradeCarFactory;
   }
 }
