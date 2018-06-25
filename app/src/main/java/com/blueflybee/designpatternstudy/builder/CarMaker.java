@@ -12,15 +12,6 @@ import com.blueflybee.designpatternstudy.composite.CarEquipment;
  * </pre>
  */
 public class CarMaker {
-//  CarEquipment car = factory.makeCar();
-//    car.add(factory.makeTire());
-//    car.add(factory.makeTire());
-//    car.add(factory.makeTire());
-//    car.add(factory.makeTire());
-//
-//    car.add(factory.makeDoorFrame());
-//    car.add(factory.makeHood());
-//    car.add(factory.makeMoonRoof());
   public CarEquipment make(CarBuilder builder) {
     builder.buildCar();
     builder.buildTire();
