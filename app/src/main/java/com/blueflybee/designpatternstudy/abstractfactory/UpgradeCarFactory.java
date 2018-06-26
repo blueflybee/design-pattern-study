@@ -33,7 +33,7 @@ public class UpgradeCarFactory extends CarFactory {
   }
 
   @Override
-  public UpgradeTire makeTire() {
+  public Tire makeTire() {
     return new UpgradeTire("upgrade tire");
   }
 
