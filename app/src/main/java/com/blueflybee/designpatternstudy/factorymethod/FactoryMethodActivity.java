@@ -37,7 +37,7 @@ public class FactoryMethodActivity extends AppCompatActivity {
   }
 
   private void initView() {
-    getSupportActionBar().setTitle("抽象工厂模式（Abstract factory 对象创建）");
+    getSupportActionBar().setTitle("工厂方法模式（Factory method 对象创建）");
     mBinding.btnCommon.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
