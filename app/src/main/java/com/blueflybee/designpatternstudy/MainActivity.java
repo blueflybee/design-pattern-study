@@ -17,6 +17,7 @@ import com.blueflybee.designpatternstudy.command.CommandActivity;
 import com.blueflybee.designpatternstudy.composite.CompositeActivity;
 import com.blueflybee.designpatternstudy.decorator.DecoratorActivity;
 import com.blueflybee.designpatternstudy.facade.FacadeActivity;
+import com.blueflybee.designpatternstudy.factorymethod.FactoryMethodActivity;
 import com.blueflybee.designpatternstudy.flyweight.FlyweightActivity;
 import com.blueflybee.designpatternstudy.interpreter.InterpreterActivity;
 import com.blueflybee.designpatternstudy.mediator.MediatorActivity;
@@ -56,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         "18、代理模式（Proxy 对象结构）",
         "19、抽象工厂模式（Abstract factory 对象创建）",
         "20、生成器模式（Builder 对象创建）",
+        "21、工厂方法模式（Factory method 对象创建）",
     };
     ListView listView = findViewById(R.id.list);
     listView.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, titles));
@@ -141,6 +143,9 @@ public class MainActivity extends AppCompatActivity {
             break;
           case 19:
             intent = new Intent(MainActivity.this, BuilderActivity.class);
+            break;
+          case 20:
+            intent = new Intent(MainActivity.this, FactoryMethodActivity.class);
             break;
 
 
