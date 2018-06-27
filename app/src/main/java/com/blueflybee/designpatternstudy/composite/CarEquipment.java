@@ -39,4 +39,8 @@ public class CarEquipment {
   public String info() {
     return mName;
   }
+
+  public String getName() {
+    return mName;
+  }
 }

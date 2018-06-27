@@ -13,4 +13,9 @@ public class MoonRoof extends CarEquipment {
   public MoonRoof(String name) {
     super(name);
   }
+
+  @Override
+  public MoonRoof clone() {
+    return new MoonRoof(mName);
+  }
 }

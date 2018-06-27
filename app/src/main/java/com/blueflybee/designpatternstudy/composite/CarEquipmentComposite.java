@@ -52,4 +52,5 @@ public class CarEquipmentComposite extends CarEquipment {
     }
     return sb.toString();
   }
+
 }

@@ -13,4 +13,9 @@ public class DeluxeHood extends Hood {
   public DeluxeHood(String name) {
     super(name);
   }
+
+  @Override
+  public Hood clone() {
+    return new Hood(mName);
+  }
 }

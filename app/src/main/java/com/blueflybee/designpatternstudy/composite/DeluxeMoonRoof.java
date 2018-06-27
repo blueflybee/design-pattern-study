@@ -12,5 +12,11 @@ package com.blueflybee.designpatternstudy.composite;
 public class DeluxeMoonRoof extends MoonRoof {
   public DeluxeMoonRoof(String name) {
     super(name);
+
+  }
+
+  @Override
+  public MoonRoof clone() {
+    return new MoonRoof(mName);
   }
 }

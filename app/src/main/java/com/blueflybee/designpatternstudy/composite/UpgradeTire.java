@@ -13,4 +13,9 @@ public class UpgradeTire extends Tire {
   public UpgradeTire(String name) {
     super(name);
   }
+
+  @Override
+  public Tire clone() {
+    return new UpgradeTire(mName);
+  }
 }

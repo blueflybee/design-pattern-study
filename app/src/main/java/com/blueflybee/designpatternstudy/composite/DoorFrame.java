@@ -13,4 +13,9 @@ public class DoorFrame extends CarEquipment {
   public DoorFrame(String name) {
     super(name);
   }
+
+  @Override
+  public DoorFrame clone() {
+    return new DoorFrame(mName);
+  }
 }

@@ -13,4 +13,9 @@ public class UpgradeDoorFrame extends DoorFrame {
   public UpgradeDoorFrame(String name) {
     super(name);
   }
+
+  @Override
+  public DoorFrame clone() {
+    return new UpgradeDoorFrame(mName);
+  }
 }

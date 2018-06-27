@@ -13,4 +13,9 @@ public class Hood extends CarEquipment {
   public Hood(String name) {
     super(name);
   }
+
+  @Override
+  public Hood clone() {
+    return new Hood(mName);
+  }
 }

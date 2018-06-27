@@ -13,4 +13,9 @@ public class DeluxeTire extends Tire {
   public DeluxeTire(String name) {
     super(name);
   }
+
+  @Override
+  public Tire clone() {
+    return new DeluxeTire(mName);
+  }
 }

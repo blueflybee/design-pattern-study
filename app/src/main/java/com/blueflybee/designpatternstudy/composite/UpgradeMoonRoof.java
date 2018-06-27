@@ -13,4 +13,9 @@ public class UpgradeMoonRoof extends MoonRoof {
   public UpgradeMoonRoof(String name) {
     super(name);
   }
+
+  @Override
+  public MoonRoof clone() {
+    return new UpgradeMoonRoof(mName);
+  }
 }

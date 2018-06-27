@@ -13,4 +13,9 @@ public class UpgradeHood extends Hood {
   public UpgradeHood(String name) {
     super(name);
   }
+
+  @Override
+  public Hood clone() {
+    return new Hood(mName);
+  }
 }
